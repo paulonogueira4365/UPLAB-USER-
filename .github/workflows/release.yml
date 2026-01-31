@@ -6,6 +6,8 @@ on:
 
 jobs:
   publish:
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
@@ -30,12 +32,13 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # ADICIONE ESTA LINHA ABAIXO:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: "" 
         with:
-          # Usar __VERSION__ faz o GitHub ler o seu package.json automaticamente
           tagName: v__VERSION__
           releaseName: "UPLAB User v__VERSION__"
-          releaseBody: "Instalador Windows com suporte a atualização automática."
-          releaseDraft: true
+          releaseBody: "Atualização automática habilitada."
+          releaseDraft: false
           prerelease: false
+          # Esta linha abaixo é a que vai criar o latest.json e os .sig para você!
+          includeUpdater: true
