@@ -1,6 +1,6 @@
 {
   "name": "uplab-requisição",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "engines": {
     "node": "20.x"
@@ -10,14 +10,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "tauri": "tauri" 
+    "tauri": "tauri"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/adapter-vercel": "^5.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "@tauri-apps/cli": "^2.0.0",
+    "@tauri-apps/cli": "^2.1.0",
     "lucide-svelte": "^0.400.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
@@ -26,6 +25,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "@tauri-apps/api": "^2.0.0"
+    "@tauri-apps/api": "^2.1.0",
+    "@tauri-apps/plugin-updater": "^2.9.0"
   }
 }
