@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/solicitar-troca/+page.svelte";

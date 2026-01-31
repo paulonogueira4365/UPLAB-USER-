@@ -27,20 +27,21 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/alterar-senha" | "/historico" | "/notificacoes" | "/requisicao" | "/solicitacoes-agendadas";
+		RouteId(): "/" | "/alterar-senha" | "/notificacoes" | "/pedidos" | "/requisicao" | "/solicitacoes-agendadas" | "/solicitar-troca";
 		RouteParams(): {
 			
 		};
 		LayoutParams(): {
 			"/": Record<string, never>;
 			"/alterar-senha": Record<string, never>;
-			"/historico": Record<string, never>;
 			"/notificacoes": Record<string, never>;
+			"/pedidos": Record<string, never>;
 			"/requisicao": Record<string, never>;
-			"/solicitacoes-agendadas": Record<string, never>
+			"/solicitacoes-agendadas": Record<string, never>;
+			"/solicitar-troca": Record<string, never>
 		};
-		Pathname(): "/" | "/alterar-senha" | "/alterar-senha/" | "/historico" | "/historico/" | "/notificacoes" | "/notificacoes/" | "/requisicao" | "/requisicao/" | "/solicitacoes-agendadas" | "/solicitacoes-agendadas/";
+		Pathname(): "/" | "/alterar-senha" | "/alterar-senha/" | "/notificacoes" | "/notificacoes/" | "/pedidos" | "/pedidos/" | "/requisicao" | "/requisicao/" | "/solicitacoes-agendadas" | "/solicitacoes-agendadas/" | "/solicitar-troca" | "/solicitar-troca/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/logo-uplab.jpg" | "/robots.txt" | "/UPLAB.png" | string & {};
+		Asset(): "/logo-uplab.jpg" | "/logo-uplab.png" | "/robots.txt" | "/UPLAB.png" | string & {};
 	}
 }

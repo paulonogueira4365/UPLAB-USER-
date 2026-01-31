@@ -1,0 +1,38 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [windows-latest]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v0.1.0 # Altere isso manualmente a cada nova versão
+          releaseName: "UPLAB User v0.1.0"
+          releaseBody: "Instalador Windows gerado automaticamente."
+          releaseDraft: true
+          prerelease: false

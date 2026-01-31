@@ -2,6 +2,9 @@
   "name": "uplab-control",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,16 +12,18 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/adapter-vercel": "^5.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "lucide-svelte": "^0.400.0",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
-    "typescript": "5.8.3",
+    "typescript": "^5.5.4",
     "vite": "^5.0.0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "lucide-svelte": "^0.400.0"
+    "@tauri-apps/cli": "^2.9.6"
   }
 }

@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/historico/+page.svelte";
+export { default as component } from "../../../../src/routes/notificacoes/+page.svelte";

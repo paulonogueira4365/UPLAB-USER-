@@ -6,16 +6,20 @@
 	"/alterar-senha": [
 		"src/routes/+layout.ts"
 	],
-	"/historico": [
+	"/notificacoes": [
 		"src/routes/+layout.ts"
 	],
-	"/notificacoes": [
+	"/pedidos": [
 		"src/routes/+layout.ts"
 	],
 	"/requisicao": [
 		"src/routes/+layout.ts"
 	],
 	"/solicitacoes-agendadas": [
+		"src/routes/+layout.ts"
+	],
+	"/solicitar-troca": [
+		"src/routes/solicitar-troca/+page.server.ts",
 		"src/routes/+layout.ts"
 	]
 }
