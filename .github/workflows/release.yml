@@ -30,9 +30,12 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ADICIONE ESTA LINHA ABAIXO:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
         with:
-          tagName: v0.1.0 # Altere isso manualmente a cada nova versão
-          releaseName: "UPLAB User v0.1.0"
-          releaseBody: "Instalador Windows gerado automaticamente."
+          # Usar __VERSION__ faz o GitHub ler o seu package.json automaticamente
+          tagName: v__VERSION__
+          releaseName: "UPLAB User v__VERSION__"
+          releaseBody: "Instalador Windows com suporte a atualização automática."
           releaseDraft: true
           prerelease: false
